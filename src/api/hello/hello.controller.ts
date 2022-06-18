@@ -1,9 +1,8 @@
-import Queue from '../../queues/base.queue';
+import LogQueue from '../../queues/console.queue';
 
 const getHello = async (_req, res) => {
   const body = { message: 'hello' }
-  await Queue.add('ConsoleQueue', body);
-  Queue.process();
+  await LogQueue.getInstance().add(body);
 
   res.send(body);
 }
