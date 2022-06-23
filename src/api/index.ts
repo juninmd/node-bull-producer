@@ -2,7 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-import { getHello } from './hello/hello.controller';
+import { getHello, postCandidate } from './hello/hello.controller';
+router.use('/candidate', postCandidate);
 router.use('/', getHello);
 
 export default router;
