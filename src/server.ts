@@ -1,10 +1,12 @@
 const app = require('express')();
 const cors = require('cors');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 import api from './api'
 
 app.use(cors());
+app.use(morgan('combined', { stream: { write: msg => console.log(msg) } }));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(api);
 
