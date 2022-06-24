@@ -1,7 +1,4 @@
-import CandidateQueue from '../queues/candidate.queue';
-import LogQueue from '../queues/console.queue';
-import EmailQueue from '../queues/email.queue';
-import VoteQueue from '../queues/vote.queue';
+import queues from '../queues';
 
 import * as express from 'express';
 
@@ -14,33 +11,33 @@ const getPing = async (_req, res) => {
 
 const postLog = async (req, res) => {
   const body = { message: req.body.message };
-  await LogQueue.getInstance().add(body);
+  await queues.log.add(body);
   return res.send(body);
 };
 
 const postEmail = async (req, res) => {
   const body = { message: req.body.message };
-  await EmailQueue.getInstance().add(body);
+  await queues.email.add(body);
 
   return res.send(body);
 };
 
 const postCandidate = async (req, res) => {
   const body = req.body;
-  await CandidateQueue.getInstance().add(body);
+  await queues.candidate.add(body);
   return res.send(body);
 };
 
 const postVote = async (req, res) => {
   const body = req.body;
-  await VoteQueue.getInstance().add({ partyNumber: body.partyNumber });
+  await queues.vote.add({ partyNumber: body.partyNumber });
   return res.send(body);
 };
 
 router.post('/log', postLog);
 router.post('/email', postEmail);
-router.post('/vote', postVote);
 router.post('/candidate', postCandidate);
+router.post('/vote', postVote);
 router.get('/', getPing);
 
 export default router;
