@@ -44,7 +44,9 @@ Neste projeto iremos aprender a utilizar serviços de mensageria para comunicar 
 ## 👨🏼‍💻 Rotas
 | Endpoint      | Descrição          |
 | ------------- |:-------------:|
-| http://localhost:9000/    | Verifica se aplicação está on-line |
-| http://localhost:9000/email    | Envia e-mail via notificação |
-| http://localhost:9000/candidate    | Cadastra o candidato da nossa votação |
-| http://localhost:9000/vote    | Decide o voto para nosso candidato |
+| GET - http://localhost:9000/    | Verifica se aplicação está on-line |
+| POST - http://localhost:9000/emails   | Envia e-mail via notificação |
+| POST - http://localhost:9000/candidates    | Cadastra o candidato da nossa votação |
+| POST - http://localhost:9000/votes    | Decide o voto para nosso candidato |
+| GET - http://localhost:9000/candidates    | Visualiza os candidatos da nossa votação |
+| GET - http://localhost:9000/votes    | Visualiza os votos |
