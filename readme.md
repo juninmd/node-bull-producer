@@ -50,3 +50,4 @@ Neste projeto iremos aprender a utilizar serviços de mensageria para comunicar 
 | POST - http://localhost:9000/votes    | Decide o voto para nosso candidato |
 | GET - http://localhost:9000/candidates    | Visualiza os candidatos da nossa votação |
 | GET - http://localhost:9000/votes    | Visualiza os votos |
+| GET - http://localhost:9000/admin/queues    | Painel de administração do bull |
