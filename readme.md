@@ -11,11 +11,10 @@
   <sub>Feito com ❤️ por <a href="https://github.com/juninmd">juninmd</a></a></sub>
 </p>
 
-## Resumo
+## ✋🏻 Resumo
 Neste projeto iremos aprender a utilizar serviços de mensageria para comunicar entre apps.
 
-
-## Tecnologias
+## 🚀 Tecnologias
 | Nome      | Descrição          |
 | ------------- |:-------------:|
 | Typescript    | Superset javascript     |
@@ -23,7 +22,7 @@ Neste projeto iremos aprender a utilizar serviços de mensageria para comunicar 
 | Bull    | Lib para tarefas assíncronas      |
 | Redis    | Banco não relacional Key Value      |
 
-## Preparando o Ambiente
+## 🔥 Preparando o Ambiente
 * Tenha instalado o [Visual Studio Code](https://code.visualstudio.com/)
 * Baixe o yarn (se node < 16.10)
   * Ele vai baixar todas a dependências do projeto.
@@ -36,14 +35,14 @@ Neste projeto iremos aprender a utilizar serviços de mensageria para comunicar 
   * Crie um arquivo .env-development
 * Depois é só dar F5 no Visual Studio Code.
 
-## Scripts NPM
+## 📝 Scripts NPM
 | Comando      | Descrição          |
 | ------------- |:-------------:|
 | start    |Inicia a aplicação   |
 
 
-## Rotas default
-| Comando      | Descrição          |
+## 👨🏼‍💻 Rotas
+| Endpoint      | Descrição          |
 | ------------- |:-------------:|
 | http://localhost:9000/    | Verifica se aplicação está on-line |
 | http://localhost:9000/email    | Envia e-mail via notificação |
