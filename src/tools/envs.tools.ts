@@ -1,9 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
 import { config } from 'dotenv';
 
 export function loadEnvs(envPath: string) {
-  console.log(`[env-check] Current environment: ${process.env.NODE_ENV}`);
+  console.log(`[env-check] Current environment: ${process.env.NODE_ENV || 'development'}`);
 
   const validEnvPath = path.resolve(envPath);
 

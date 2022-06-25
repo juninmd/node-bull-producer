@@ -1,7 +1,12 @@
+version: '3'
+
 services:
-  redis:
-    image: redis:latest
-    volumes:
-      - data:/data
+  cache-redis:
+    image: redis
+    command: redis-server --requirepass redispw
     ports:
-      - 6379:6379
+      - "6379:6379"
+
+volumes:
+  cache-redis:
+    driver: local
