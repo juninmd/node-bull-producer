@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "nodemon": "nodemon ./src/index.ts --watch",
-    "nodemon:debug": "nodemon -e ts,json --exec node --inspect-brk -r ts-node src/index.ts",
+    "nodemon": "node --watch -r ts-node/register src/index.ts",
+    "nodemon:debug": "node --inspect-brk --watch -r ts-node/register src/index.ts",
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix"
   },
@@ -27,16 +27,21 @@
     "@types/bull": "^3.15.8",
     "@types/express": "^4.17.13",
     "@types/node": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.71.1",
+    "@typescript-eslint/parser": "^8.71.1",
     "dotenv": "^16.0.1",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "nodemon": "^2.0.16",
     "prettier": "^2.3.2",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^4.0.0",
     "typescript": "^4.3.5"
+  },
+  "resolutions": {
+    "express": "^4.22.3",
+    "ejs": "^3.1.10",
+    "proxy-addr": "^2.0.8",
+    "uuid": "^11.1.1"
   }
 }
