@@ -2,6 +2,13 @@ import * as Bull from 'bull';
 import { Queues } from '../enums';
 import configs from '../configs';
 
+const DEFAULT_JOB_OPTIONS: Bull.JobOptions = {
+  attempts: 5,
+  delay: 2000,
+  removeOnFail: false,
+  backoff: 5000,
+};
+
 /**
  * Classe Singleton
  */
@@ -31,7 +38,7 @@ export default class BaseQueue {
 
   protected failed(job, err) {
     console.error(
-      `Queue [${job.queue.name}] - ${JSON.stringify(job.data)} - Id ${
+      `Queue [${job.queue.name}] - Id ${
         job.id
       } has been failed, by de reason: ${job.failedReason}`,
     );
@@ -40,21 +47,13 @@ export default class BaseQueue {
 
   protected completed(job) {
     console.log(
-      `Queue [${job.queue.name}] - ${JSON.stringify(job.data)} - Id ${
+      `Queue [${job.queue.name}] - Id ${
         job.id
       } has been completed`,
     );
   }
 
   add(body: any, opts?: Bull.JobOptions) {
-    return this.queue.add(
-      body,
-      opts || {
-        attempts: 5,
-        delay: 2000,
-        removeOnFail: false,
-        backoff: 5000,
-      },
-    );
+    return this.queue.add(body, { ...DEFAULT_JOB_OPTIONS, ...opts });
   }
 }
